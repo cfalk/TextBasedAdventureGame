@@ -1,0 +1,26 @@
+{
+    "HUMAN": {
+        "base_stats": {
+            "str":10,
+            "dex":11,
+            "con":10,
+            "wis":12,
+            "int":10,
+            "cha":12,
+            "hp":10
+        },
+        "growth_rates": {
+            "str":0.4,
+            "dex":0.45,
+            "con":0.4,
+            "wis":0.5,
+            "int":0.5,
+            "cha":0.65,
+            "hp":2.5
+        },
+        "alliances": {"human":1}
+    },
+    "ORC": {
+        
+    }
+}

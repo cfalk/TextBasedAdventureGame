@@ -19,6 +19,7 @@ class IoDevice:
                 input_prefix = self.lex.get("STANDARD_INPUT_PREFIX")
                 return force_type(input(input_prefix))
             except Exception as e:
+                print("DEBUG-IO:{}".format(e))
                 self.out("INVALID_INPUT_WARNING")
 
     def out(self, translate_id, prefix="", raw_kwargs=None, kwargs_to_translate=None):

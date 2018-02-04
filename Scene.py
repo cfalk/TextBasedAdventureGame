@@ -6,6 +6,7 @@ class Scene:
         self.scene_id = scene_json.get("Id")
         self.pre_scene_actions = [action_map[a_id].build(**a_args) for (a_id, a_args) in scene_json.get("PreSceneActions")]
         self.actions = [action_map[a_id].build(**a_args) for (a_id, a_args) in scene_json.get("Actions")]
+        self.attributes = scene_json.get("SceneAttributes", {})
 
     def proceed(self, game_graph):
         # Perform any forced actions

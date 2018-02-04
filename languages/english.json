@@ -12,14 +12,18 @@
   "BACK_TO_BATTLE":"Return back to the fray!",
   
   "REQUEST_CHARACTER_NAME":"What should we call you?",
+  "REQUEST_CHARACTER_RACE":"And, er... If you don't mind me asking, what are you?",
   "GOOD_TO_MEET_YOU":"Ah! Good to meet you, {character_name}.",
   
   "DESCRIPTION:ACTION-CHANGE-SCENE":["Proceed {scene_name}!", "Go {scene_name}."],
   "DESCRIPTION:PROCEED-TOWARDS-BATTLE":["Draw your blade..."],
+  "DESCRIPTION:ATTACK-ACTION":"Attack!",
   "TRAVELING":"... You journey forth.",
   
   "NAME:SCENE-001":"to the battlefield",
   "NAME:SCENE-002":"back to camp to heal",
+  
+  "BATTLE-001":"You draw your weapon and approach the Goblin horde.",
   
   "SCENE-CHARACTER-CREATION":"You find yourself at camp. You can hear the sound of warfare not too far away.",
   "SCENE-001":"You find yourself on the battlefield. Nameless corpses writhe at your feet. You can see enemies in every direction.",

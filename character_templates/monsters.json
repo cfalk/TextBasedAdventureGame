@@ -1,0 +1,22 @@
+{
+    "GOBLIN-0": {
+        "base_stats": {
+            "str":7,
+            "dex":12,
+            "con":7,
+            "wis":7,
+            "int":7,
+            "cha":7,
+            "hp":5
+        },
+        "growth_rates": {
+            "str":0.4,
+            "dex":0.7,
+            "con":0.4,
+            "wis":0.5,
+            "int":0.5,
+            "cha":0.65,
+            "hp":2
+        }
+    }
+}

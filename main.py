@@ -1,4 +1,4 @@
-import os.path
+import os
 
 from Game import Game
 from IoDevice import IO
@@ -8,6 +8,9 @@ GAME_TEMPLATE = "test-game.json"
 
 SAVE_EXTENSION = "gamefile"
 SAVE_DIR = "games"
+
+if not os.path.exists(SAVE_DIR):
+    os.makedirs(SAVE_DIR)
 
 
 def run():

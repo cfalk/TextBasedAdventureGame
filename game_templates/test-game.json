@@ -15,8 +15,14 @@
         "PreSceneActions":[
           ],
         "Actions": [
-          ["ACTION-TRIGGER-BATTLE",{}],
-          ["ACTION-CHANGE-SCENE",{"target_scene_id":"SCENE-002","scene_name":"NAME:SCENE-002"}]
+          ["ACTION-INITIATE-BATTLE",{"target_battle_id":"BATTLE-001", 
+            "characters": [
+                {"id":"GOBLIN-0", "level":1},
+                {"id":"GOBLIN-0", "level":2}
+            ]
+            }
+          ],[
+          "ACTION-CHANGE-SCENE",{"target_scene_id":"SCENE-002","scene_name":"NAME:SCENE-002"}]
           ]
       },{
         "Id":"SCENE-002",
@@ -26,14 +32,25 @@
         "Actions":[
           ["ACTION-CHANGE-SCENE",{"target_scene_id":"SCENE-001","scene_name":"NAME:SCENE-001"}]
           ]
+      },{
+        "Id":"BATTLE-001",
+        "PreSceneActions":[
+          ],
+        "Actions":[
+          ["ACTION-ATTACK",{}]
+          ]
       }
     ],
   "Actions": 
     [
       {
-        "Id":"ACTION-TRIGGER-BATTLE", 
+        "Id":"ACTION-INITIATE-BATTLE", 
         "Module":"ActionDefinitions",
-        "ClassName":"BattleDefinition"
+        "ClassName":"InitiateBattleDefinition"
+      },{
+        "Id":"ACTION-ATTACK", 
+        "Module":"ActionDefinitions",
+        "ClassName":"AttackDefinition"
       },{
         "Id":"ACTION-CREATE-CHARACTER", 
         "Module":"ActionDefinitions",

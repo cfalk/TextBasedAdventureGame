@@ -5,6 +5,8 @@ import os.path
 LANGUAGE_DIR = "languages"
 LANGUAGE = "english"
 
+UNKNOWN_RESPONSE = "???"
+
 
 class Lexicon:
     def __init__(self):
@@ -15,9 +17,8 @@ class Lexicon:
             self.lex_dictionary = json.load(language_file)
 
     def get(self, key):
-        if key in self.lex_dictionary:
+        try:
             blurb = self.lex_dictionary.get(key)
             return random.choice(blurb) if type(blurb) == list else blurb
-        else:
-            error = "Lexicon ({}) does not know '{}'".format(LANGUAGE, key)
-            raise Exception(error)
+        except Exception:
+            return UNKNOWN_RESPONSE
