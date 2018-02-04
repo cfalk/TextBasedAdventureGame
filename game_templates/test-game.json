@@ -1,0 +1,51 @@
+{
+  "InitialScene":"SCENE-CHARACTER-CREATION",
+  "Scenes": 
+    [
+      {
+        "Id":"SCENE-CHARACTER-CREATION",
+        "PreSceneActions":[
+          ["ACTION-CREATE-CHARACTER",{}]
+          ],
+        "Actions": [
+          ["ACTION-CHANGE-SCENE",{"target_scene_id":"SCENE-001","scene_name":"NAME:SCENE-001"}]
+          ]
+      },{
+        "Id":"SCENE-001",
+        "PreSceneActions":[
+          ],
+        "Actions": [
+          ["ACTION-TRIGGER-BATTLE",{}],
+          ["ACTION-CHANGE-SCENE",{"target_scene_id":"SCENE-002","scene_name":"NAME:SCENE-002"}]
+          ]
+      },{
+        "Id":"SCENE-002",
+        "PreSceneActions":[
+          ["ACTION-HEAL-CHARACTERS",{}]
+          ],
+        "Actions":[
+          ["ACTION-CHANGE-SCENE",{"target_scene_id":"SCENE-001","scene_name":"NAME:SCENE-001"}]
+          ]
+      }
+    ],
+  "Actions": 
+    [
+      {
+        "Id":"ACTION-TRIGGER-BATTLE", 
+        "Module":"ActionDefinitions",
+        "ClassName":"BattleDefinition"
+      },{
+        "Id":"ACTION-CREATE-CHARACTER", 
+        "Module":"ActionDefinitions",
+        "ClassName":"CreatePlayableCharacterDefinition"
+      },{
+        "Id":"ACTION-CHANGE-SCENE", 
+        "Module":"ActionDefinitions",
+        "ClassName":"ChangeSceneDefinition"
+      },{
+        "Id":"ACTION-HEAL-CHARACTERS", 
+        "Module":"ActionDefinitions",
+        "ClassName":"HealCharactersDefinition"
+      }
+      ]
+}

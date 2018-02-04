@@ -1,0 +1,27 @@
+{
+  "GAME_GREETING":"Welcome! What save would you like to load?",
+  "CONFIRM_READ":"[Enter to Continue]",
+  "INVALID_INPUT_WARNING":"Invalid input. Please try again.",
+  "PROMPT_CHOICES":"What do you do?... [Select a Number]",
+  "STANDARD_INPUT_PREFIX":"> ",
+  "???":"???",
+  
+  "INITIATE_COMBAT":["You draw your weapon!", "You prepare to fight...", "You froth at the mouth and spit welcomingly at your foe!"],
+  "OPTION_INITIATE_COMBAT":"Attack!",
+
+  "BACK_TO_BATTLE":"Return back to the fray!",
+  
+  "REQUEST_CHARACTER_NAME":"What should we call you?",
+  "GOOD_TO_MEET_YOU":"Ah! Good to meet you, {character_name}.",
+  
+  "DESCRIPTION:ACTION-CHANGE-SCENE":["Proceed {scene_name}!", "Go {scene_name}."],
+  "DESCRIPTION:PROCEED-TOWARDS-BATTLE":["Draw your blade..."],
+  "TRAVELING":"... You journey forth.",
+  
+  "NAME:SCENE-001":"to the battlefield",
+  "NAME:SCENE-002":"back to camp to heal",
+  
+  "SCENE-CHARACTER-CREATION":"You find yourself at camp. You can hear the sound of warfare not too far away.",
+  "SCENE-001":"You find yourself on the battlefield. Nameless corpses writhe at your feet. You can see enemies in every direction.",
+  "SCENE-002":"You arrive back at camp. The weary faces of your remaining comrades gaze at you with an empty awareness."
+}
