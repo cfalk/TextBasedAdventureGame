@@ -53,8 +53,12 @@ class AttackDefinition(Action):
                 continue
 
             other_combatants = [c for c in combatants if c is not character]
-            # TODO: Ask playable characters for target.
-            target = get_least_aligned(character, other_combatants, game_graph)
+            if character.playable:
+                targets = ["BATTLE_TARGET" for c in other_combatants]
+                target_kwargs = [{"name":"Bob", "hp":c.current_stats["hp"]} for c in other_combatants]
+            else:
+                target = get_least_aligned(character, other_combatants, game_graph)
+                
             character.attack(target)
 
 

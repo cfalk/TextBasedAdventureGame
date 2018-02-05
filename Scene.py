@@ -17,19 +17,9 @@ class Scene:
         IO.out(self.get_id())
 
         # Reveal Action Choices
-        IO.out("PROMPT_CHOICES")
-        for option_num, action in enumerate(self.actions):
-            prefix = "{}.) ".format(option_num + 1)
-            IO.out(action.description_id, prefix=prefix, kwargs_to_translate=action.stored_kwargs)
-
-        # Choose a Choice.
-        while(True):
-            chosen_index = IO.input(force_type=int)
-            if 1 <= chosen_index <= len(self.actions):
-                break
-            else:
-                IO.out("INVALID_INPUT_WARNING")
-
+        description_ids = [a.description_id for a in self.actions]
+        kwarg_list = [a.stored_kwargs for a in self.actions]
+        chosen_index = IO.choose_option(description_ids, kwarg_list=kwarg_list)
         self.actions[chosen_index - 1].enact(game_graph)
 
     def get_id(self):

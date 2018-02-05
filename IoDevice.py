@@ -22,13 +22,32 @@ class IoDevice:
                 print("DEBUG-IO:{}".format(e))
                 self.out("INVALID_INPUT_WARNING")
 
+    def choose_option(self, description_ids, kwarg_list = None):
+        kwarg_list = kwarg_list or []
+
+        # Reveal Action Choices
+        IO.out("PROMPT_CHOICES")
+        for option_num, description_id in enumerate(description_ids):
+            prefix = "{}.) ".format(option_num + 1)
+            IO.out(description_ids, prefix=prefix, kwargs_to_translate=kwarg_list[option_num])
+
+        # Choose a Choice.
+        while(True):
+            chosen_index = self.input(force_type=int)
+            if 1 <= chosen_index <= len(self.actions):
+                break
+            else:
+                IO.out("INVALID_INPUT_WARNING")
+
+        return chosen_index
+
     def out(self, translate_id, prefix="", raw_kwargs=None, kwargs_to_translate=None):
         # Translate any kwargs that need to be translated using the Lexicon
         raw_kwargs = raw_kwargs or {}
         kwargs_to_translate = kwargs_to_translate or {}
         format_kwargs = {k: self.lex.get(arg) for k, arg in kwargs_to_translate.items()}
         format_kwargs.update(raw_kwargs)
-    
+
         output = "{}{}".format(prefix, self.lex.get(translate_id).format(**format_kwargs))
         delay_print(output)
 
