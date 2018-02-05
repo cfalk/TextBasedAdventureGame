@@ -19,6 +19,9 @@ class GameGraph():
             assert_id_not_present(scene.get_id(), self.scene_map)
             self.scene_map[scene.get_id()] = scene
 
+        # Load the Alliance Traits.
+        self.alliance_map = game_json.get("Alliances", {})
+
         # Set the Starting Location
         current_scene_id = game_json.get("InitialScene")
         self.current_scene = self.scene_map[current_scene_id]

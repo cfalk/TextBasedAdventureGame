@@ -64,5 +64,11 @@
         "Module":"ActionDefinitions",
         "ClassName":"HealCharactersDefinition"
       }
-      ]
+      ],
+"Alliances": {
+    "human":{"human":0.8, "society":0.8},
+    "orc":{"orc":0.9, "society":0.6},
+    "goblin":{"society":-0.15},
+    "society":{"goblins":-0.15}
+}
 }

@@ -29,8 +29,33 @@ class InitiateBattleDefinition(Action):
 
 class AttackDefinition(Action):
     description_id = "DESCRIPTION:ACTION-ATTACK"
+
     def enact(self, game_graph):
-        pass
+
+        def get_least_aligned(character, others, game_graph):
+            # Default to the first character.
+            least_aligned_char = None
+            least_aligned = float("infinity")
+
+            for other in others:
+                bias_calc = character.determine_bias(other, game_graph)
+                if least_aligned > bias_calc:
+                    least_aligned = bias_calc
+                    least_aligned_char = other
+
+            return least_aligned_char
+
+        battle_scene = game_graph.current_scene
+        combatants = battle_scene.attributes["initiative"]
+
+        for character in combatants:
+            if not character.can_take_action():
+                continue
+
+            other_combatants = [c for c in combatants if c is not character]
+            # TODO: Ask playable characters for target.
+            target = get_least_aligned(character, other_combatants, game_graph)
+            character.attack(target)
 
 
 class CreatePlayableCharacterDefinition(Action):
